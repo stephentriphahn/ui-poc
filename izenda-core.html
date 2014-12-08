@@ -1,0 +1,47 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="bower_components/core-menu/core-menu.html">
+<link rel="import" href="bower_components/core-item/core-item.html">
+<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+
+
+
+
+<polymer-element name="izenda-core" noscript>
+	<template>
+		<style>
+			core-header-panel#drawer core-toolbar {
+				background-color: #1D4E89;
+			}
+			core-header-panel#drawer {
+				background-color:#F9F9F9;
+			}
+			
+			core-header-panel#main core-toolbar {
+				background-color:#1D4E89;
+			}
+			core-icon-button[icon="menu"]{
+				color:white;
+			}
+		</style>
+		<core-drawer-panel>
+			<core-header-panel drawer id="drawer">
+				<core-toolbar>
+					<div><img src="images/logo.png" alt="Izenda"/></div>
+				</core-toolbar>
+				
+				<div id="drawer-content">
+					<content select="izenda-searchbar"></content>
+				</div>
+			</core-header-panel>
+			<core-header-panel main id="main">
+				<core-toolbar>
+					<core-icon-button icon="menu" core-drawer-toggle ></core-icon-button>
+					<content select="izenda-navbar"></content>
+				</core-toolbar>				
+				<div id="main-content" horizontal layout wrap><content select="izenda-thumbnail"></content></div>
+			</core-header-panel>
+		</core-drawer-panel>
+	</template>
+</polymer-element>

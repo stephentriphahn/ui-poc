@@ -1,0 +1,37 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+
+
+<polymer-element name="izenda-thumbnail" noscript>
+	<template>
+		<style>
+			:host {
+				display: block;
+				width: 190px;
+				box-shadow: 0px 0px 5px gray;
+				border-radius: 1px;
+				margin: 10px 15px 10px 15px;
+				background-color:rgba(29, 78, 137, .05);
+				
+			}
+			polyfill-next-selector { content: 'img'; }
+			 ::content img {
+				width: 170px;
+				margin: 10px 10px 2px 10px;
+				border: 1px solid gray;
+			}
+			polyfill-next-selector { content: 'h4'; }
+			 ::content h4 {
+				margin-top: 4px;
+				margin-bottom: 4px;
+				margin-left: 8px;
+			}
+		</style>
+		<content select="img"></content>
+		<div class="report-title">
+			<content select="h4"></content>
+		</div>
+	</template>
+</polymer-element>
+	
+	

@@ -1,0 +1,65 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-menu/core-menu.html">
+<link rel="import" href="bower_components/paper-dropdown/paper-dropdown.html">
+<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="bower_components/paper-item/paper-item.html">
+<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+
+<polymer-element name="izenda-navbar" noscript>
+	<template>
+	<style>
+		:host{
+			width: 100%;
+			display: inline;
+			
+		}
+		paper-dropdown {
+			position: absolute;
+			top: 30px;
+			left: 55px;
+		}
+		div#nav-options {
+			width: 80%;
+			margin-left:100px;
+		
+		}
+		paper-tabs {
+			margin-left: 15px;
+		}
+		paper-tab {
+			color: white;
+		}
+		paper-tab#dashboards {
+			padding-right: 15px;
+		}
+		div#nav-dropdown {
+			width: 155px;
+		}
+		
+		
+		
+	</style>
+	<div horizontal center layout>
+		<div id="nav-dropdown">
+		<paper-dropdown-menu label="New">
+			<paper-dropdown class="dropdown">
+				<core-menu class="menu">
+					<paper-item>Report</paper-item>
+					<paper-item>Dashboard</paper-item>
+					<paper-item>Instant Report</paper-item>
+				</core-menu>
+			</paper-dropdown>
+		</paper-dropdown-menu>
+		</div>
+		<div id="nav-options" horizontal end-justified layout>
+		<paper-tabs selected="0">
+			<paper-tab name="Reports">Reports</paper-tab>
+			<paper-tab id="dashboards" name="Dashboards">Dashboards</paper-tab>
+		</paper-tabs>
+		</div>
+	</div>
+	
+		
+	<template>
+<polymer-element>
