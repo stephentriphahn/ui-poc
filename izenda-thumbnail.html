@@ -1,4 +1,5 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
 
 
 
@@ -8,10 +9,10 @@
 			:host {
 				display: block;
 				width: 190px;
-				box-shadow: 0px 0px 5px gray;
-				border-radius: 1px;
+				
+				border-radius: 0px;
 				margin: 10px 15px 10px 15px;
-				background-color:rgba(29, 78, 137, .05);
+				background-color:rgba(78, 78, 78, .15) /*rgba(179, 203, 218, .4); */
 				
 			}
 			polyfill-next-selector { content: 'img'; }
@@ -27,10 +28,12 @@
 				margin-left: 8px;
 			}
 		</style>
+		<paper-shadow z="1">
 		<content select="img"></content>
 		<div class="report-title">
 			<content select="h4"></content>
 		</div>
+		</paper-shadow>
 	</template>
 </polymer-element>
 	

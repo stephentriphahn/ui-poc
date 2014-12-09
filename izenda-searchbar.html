@@ -1,6 +1,12 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/paper-input/paper-input.html">
 <link rel="import" href="bower_components/core-icon/core-icon.html">
+<link rel="import" href="bower_components/core-menu/core-menu.html">
+<link rel="import" href="bower_components/core-menu/core-submenu.html">
+<link rel="import" href="bower_components/core-item/core-item.html">
+<link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
 
 <polymer-element name="izenda-searchbar" noscript>
 	<template>
@@ -11,9 +17,90 @@
 				padding-left: 5px;
 				margin-top: 10px;
 			}
+			core-icon[icon="search"]{
+				color:#4e4e4e;
+			}
+			@font-face {
+				font-family: Quicksand;
+				src: url(quicksand/Quicksand-Regular.otf);
+			}
+			core-submenu {
+				font-family: Quicksand;
+				font-size: 1.3em;
+			} 
+			polyfill-next-selector { content: 'core-submenu > #submenu > core-item'; }
+				core-submenu > core-item {
+				color: #4e4e4e;
+			}
+			core-item.core-selected {
+				background-color: #b3cbda;
+			}
+			core-submenu::shadow #submenu {
+				margin-left: -25px;
+				margin-right: -10px;
+			}
+			core-submenu core-item{
+				padding-left: 70px;
+				font-size: 14px;
+			}
+			paper-shadow#settings-button {
+				width:82px;
+				height:46px;
+				position:absolute;
+				bottom: 4px;
+			}
+			paper-shadow#settings-button paper-button{
+				margin:0px;
+			}
+			paper-shadow#close-button {
+				width:82px;
+				height:46px;
+				position:absolute;
+				bottom: 4px;
+				left: 150px;
+			}
+			paper-shadow#close-button paper-button{
+				margin:0px;
+			}
+			paper-input {
+				padding-left:4px;
+			}
+			
+		
 		</style>
 		
 		<paper-input label="Search"></paper-input>
 		<span id="search-icon"><core-icon icon="search"></core-icon></span>
+		<div id="category-menu">
+		
+			<core-menu selected="0">
+				
+				<core-submenu icon="list" label="Categories">
+					<core-item label="This is a long categor name"></core-item>
+					<core-item label="Category 2"></core-item>
+					<core-item label="Category 2"></core-item>
+					<core-item label="Category 2"></core-item>
+					<core-item label="Category 2"></core-item>
+				</core-submenu>
+				
+				
+				
+				<core-submenu icon="history" label="Recent">
+					<core-item label="Favorite 1"></core-item>
+					<core-item label="Favorite 2"></core-item>
+					<core-item label="Favorite 3"></core-item>
+				</core-submenu>
+				
+
+			</core-menu>
+			
+		</div>
+		<paper-shadow z="2" id="settings-button">
+			<paper-button raised><core-icon icon="settings"></core-icon></paper-button>
+		</paper-shadow>
+		<paper-shadow z="2" id="close-button">
+			<paper-button raised><core-icon icon="arrow-back"></core-icon></paper-button>
+		</paper-shadow>
+				
 	</template>
 </polymer-element>

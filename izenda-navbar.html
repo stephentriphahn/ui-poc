@@ -36,7 +36,15 @@
 		div#nav-dropdown {
 			width: 155px;
 		}
-		
+		paper-tabs.tab::shadow #selectionBar {
+			background-color: #e4e4e4;
+		}
+		paper-tabs.tab paper-tab::shadow #ink {
+			color: #e4e4e4;
+		}
+		paper-item.core-selected {
+				background-color: #b3cbda;
+			}
 		
 		
 	</style>
@@ -53,7 +61,7 @@
 		</paper-dropdown-menu>
 		</div>
 		<div id="nav-options" horizontal end-justified layout>
-		<paper-tabs selected="0">
+		<paper-tabs selected="0" class="tab">
 			<paper-tab name="Reports">Reports</paper-tab>
 			<paper-tab id="dashboards" name="Dashboards">Dashboards</paper-tab>
 		</paper-tabs>
